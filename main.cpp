@@ -1,10 +1,11 @@
-#include <iostream>
+#include <string>
 
-void Log(const char* message);
+#include "Log.h"
+#include "Variables.h"
 
 int main() {
 
-    Log("message");
+    remindVariableSizes();
 
     return 0;
 }

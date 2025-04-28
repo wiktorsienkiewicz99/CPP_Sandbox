@@ -1,10 +1,6 @@
-//
-// Created by Wiktor Sienkiewicz on 23/04/2025.
-//
-
 #include "Variables.h"
 #include "../Logger/Logger.h"
-#include "string"
+#include <string> // include with <>
 
 int getSizeOfInt(int a) {
     return sizeof(a);

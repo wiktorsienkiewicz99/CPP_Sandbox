@@ -25,4 +25,5 @@ It includes basic examples of:
 | `src/main.cpp` | Main program demonstrating examples with Logger, Increment, and Variables |
 
 ---
-
+**What do you call a fox that’s bad at hiding?**  
+A *"sly-fail."* 🦊

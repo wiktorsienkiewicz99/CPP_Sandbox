@@ -12,4 +12,8 @@ add_executable(CPP_Sandbox src/main.cpp
         src/Variables/Variables.h
         src/Increment/Increment.cpp
         src/Increment/Increment.h
+
+)
+add_executable(test_CPP_Sandbox
+        src/test_main.cpp
 )

@@ -12,6 +12,18 @@ add_executable(CPP_Sandbox src/main.cpp
         src/Variables/Variables.h
         src/Increment/Increment.cpp
         src/Increment/Increment.h
+        src/TemplatesInterfaces/Drawable.h
+        src/TemplatesInterfaces/Circle.cpp
+        src/TemplatesInterfaces/Circle.h
+        src/TemplatesInterfaces/Shape.h
+        src/TemplatesInterfaces/Rectangle.cpp
+        src/TemplatesInterfaces/Rectangle.h
+        src/TemplatesInterfaces/Triangle.cpp
+        src/TemplatesInterfaces/Triangle.h
+        src/TemplatesInterfaces/Templates.cpp
+        src/TemplatesInterfaces/Templates.h
+        src/TemplatesInterfaces/Logger.cpp
+        src/TemplatesInterfaces/Logger.h
 
 )
 add_executable(test_CPP_Sandbox

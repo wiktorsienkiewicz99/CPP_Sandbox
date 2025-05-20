@@ -24,8 +24,12 @@ add_executable(CPP_Sandbox src/main.cpp
         src/TemplatesInterfaces/Templates.h
         src/TemplatesInterfaces/Logger.cpp
         src/TemplatesInterfaces/Logger.h
+        src/OOPPillars/Pillar.cpp
+        src/OOPPillars/Pillar.h
 
 )
 add_executable(test_CPP_Sandbox
         src/test_main.cpp
+        src/OOPPillars/Pillar.cpp
+        src/OOPPillars/Pillar.h
 )

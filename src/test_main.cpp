@@ -1,7 +1,11 @@
 #include <iostream>
+#include <vector>
 #include "OOPPillars/Pillar.h"
+import VectorModule;
+//#include "Collections/Vector.h"
 
 int main() {
+    /*
     //Encapsulation
     EncapsulationGameCharacter ch1(200);
     ch1.printHealth();
@@ -21,6 +25,9 @@ int main() {
     Chest chest;
     playerInteractsWith(&door);
     playerInteractsWith(&chest);
+    */
+
+    runVectorModule();
 
     return 0;
 }

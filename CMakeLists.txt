@@ -1,35 +1,41 @@
 cmake_minimum_required(VERSION 3.31)
-project(CPP_Sandbox)
+project(CPP_Sandbox LANGUAGES CXX)
 
-message(STATUS "Using compiler: ${CMAKE_CXX_COMPILER}")
+# Must be set for C++ modules
+set(CMAKE_EXPERIMENTAL_CXX_MODULE_CMAKE_API 1)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(CPP_Sandbox src/main.cpp
-        src/Logger/Logger.cpp
-        src/Logger/Logger.h
-        src/Variables/Variables.cpp
-        src/Variables/Variables.h
-        src/Increment/Increment.cpp
-        src/Increment/Increment.h
-        src/TemplatesInterfaces/Drawable.h
-        src/TemplatesInterfaces/Circle.cpp
-        src/TemplatesInterfaces/Circle.h
-        src/TemplatesInterfaces/Shape.h
-        src/TemplatesInterfaces/Rectangle.cpp
-        src/TemplatesInterfaces/Rectangle.h
-        src/TemplatesInterfaces/Triangle.cpp
-        src/TemplatesInterfaces/Triangle.h
-        src/TemplatesInterfaces/Templates.cpp
-        src/TemplatesInterfaces/Templates.h
-        src/TemplatesInterfaces/Logger.cpp
-        src/TemplatesInterfaces/Logger.h
-        src/OOPPillars/Pillar.cpp
-        src/OOPPillars/Pillar.h
-
+# Executable 1: Main
+add_executable(CPP_Sandbox
+        src/main.cpp
 )
+
+target_sources(CPP_Sandbox
+        PRIVATE
+        FILE_SET modules TYPE CXX_MODULES
+        BASE_DIRS src/Collections
+        FILES
+        src/Collections/VectorModule.ixx
+)
+
+# Executable 2: Test
 add_executable(test_CPP_Sandbox
         src/test_main.cpp
-        src/OOPPillars/Pillar.cpp
-        src/OOPPillars/Pillar.h
 )
+
+target_sources(test_CPP_Sandbox
+        PRIVATE
+        FILE_SET modules TYPE CXX_MODULES
+        BASE_DIRS src/Collections
+        FILES
+        src/Collections/VectorModule.ixx
+)
+
+# Enable Clang-specific module flags
+if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    foreach(target CPP_Sandbox test_CPP_Sandbox)
+        target_compile_options(${target} PRIVATE -fmodules -fcxx-modules)
+    endforeach()
+endif()
